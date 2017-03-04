@@ -1,0 +1,17 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="leftItemMargin">5dp</dimen>
+    <dimen name="topItemMargin">10dp</dimen>
+
+    <dimen name="itemTxtDp">16sp</dimen>
+
+    <dimen name="menuLeftItemMargin">15dp</dimen>
+
+    <dimen name="itemMenuTxtDp">20sp</dimen>
+    <dimen name="itemTxtMenuMarginTopDp">10dp</dimen>
+    <dimen name="menuItemDrawableDp">65dp</dimen>
+
+</resources>

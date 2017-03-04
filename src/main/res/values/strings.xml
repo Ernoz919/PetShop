@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PetShop</string>
+
+    <string name="leftArrow"> ← </string>
+    <string name="rightArrow"> → </string>
+
+</resources>
