@@ -1,4 +1,4 @@
-package com.example.jv_jo.firstproject;
+package com.example.jv_jo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

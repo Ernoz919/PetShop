@@ -1,14 +1,18 @@
-package com.example.jv_jo.firstproject;
+package com.example.jv_jo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.jv_jo.firstproject.R;
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -58,7 +62,24 @@ public class AnimalsActivity extends Activity {
         telCHEF = data.getString("telCHEF");
         breedSelected = data.getString("selectedBreed");
 
-        animalItem = breedSelected + " " + nameAnimal + "\n" +
+        listData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                int codPosition = position;
+
+                String choiceAnimal = breedSelected + "\n" +
+                        nameAnimal +" "+ animalBirth + "\n" +
+                        "Altura: " + animalStreet +" "+ "Largura: " + animalLargura + "\n" +
+                        nameChef +" "+ cpfCHEF +" "+ telCHEF + "\n" +
+                        animalStreet +" "+ animalNumberStreet;
+
+                Intent animal = new Intent(AnimalsActivity.this, AnimalActivity.class);
+                animal.putExtra("animalDesc", choiceAnimal);
+
+                startActivity(animal);
+            }
+        });
+
+        animalItem = nameAnimal + "\n" +
         animalBirth + " " +telCHEF + "\n" +
         nameChef;
 

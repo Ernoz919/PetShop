@@ -1,18 +1,11 @@
-package com.example.jv_jo.firstproject;
+package com.example.jv_jo;
 
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.graphics.drawable.DrawableWrapper;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -21,11 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.jv_jo.firstproject.R;
 
 public class RegisterActivity extends Activity {
 
@@ -94,11 +85,12 @@ public class RegisterActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                AlertDialog.Builder dialog = new AlertDialog.Builder(RegisterActivity.this);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                final AlertDialog dialog = builder.create();
                 View choiceView = getLayoutInflater().inflate(R.layout.activity_choice, null);
                 dialog.setView(choiceView);
 
-                listChoice = (ListView)findViewById(R.id.listId);
+                listChoice = (ListView) choiceView.findViewById(R.id.listId);
 
                 ArrayAdapter<String> adapterChoice = new ArrayAdapter<String>(
                     getApplicationContext(),
@@ -122,26 +114,25 @@ public class RegisterActivity extends Activity {
                         int codPosition = position;
                         choiceBreed = listChoice.getItemAtPosition(codPosition).toString();
                         toList.setText(choiceBreed);
-
+                        dialog.dismiss();
                     }
                 });
 
                 dialog.setTitle("Selecione a raça do animal");
-                dialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        dialog.dismiss();
                     }
                 });
 
-                dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         toList.setText(choiceBreed);
                     }
                 });
 
-                dialog.create();
                 dialog.show();
 
             }
@@ -192,6 +183,7 @@ public class RegisterActivity extends Activity {
                 toWin.putExtra("selectedBreed", selectedBreed);
 
                 startActivity(toWin);
+                finish();
 
             }
         });

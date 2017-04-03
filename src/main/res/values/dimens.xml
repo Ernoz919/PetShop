@@ -13,5 +13,6 @@
     <dimen name="itemMenuTxtDp">20sp</dimen>
     <dimen name="itemTxtMenuMarginTopDp">10dp</dimen>
     <dimen name="menuItemDrawableDp">65dp</dimen>
+    <dimen name="menuItemDp">140dp</dimen>
 
 </resources>

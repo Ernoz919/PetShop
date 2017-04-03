@@ -1,4 +1,4 @@
-package com.example.jv_jo.firstproject;
+package com.example.jv_jo;
 
 import org.junit.Test;
 

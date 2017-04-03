@@ -1,23 +1,11 @@
-package com.example.jv_jo.firstproject;
+package com.example.jv_jo;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.Spinner;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.jv_jo.firstproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
     public void toRegister(View view){
         Intent register = new Intent(this, RegisterActivity.class);
         startActivity(register);
+    }
+
+    public void toAnimals(View view) {
+        Intent animal = new Intent(this, AnimalsActivity.class);
+        startActivity(animal);
     }
 
 }
