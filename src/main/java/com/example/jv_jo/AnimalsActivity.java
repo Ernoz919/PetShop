@@ -66,14 +66,20 @@ public class AnimalsActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 int codPosition = position;
 
-                String choiceAnimal = breedSelected + "\n" +
-                        nameAnimal +" "+ animalBirth + "\n" +
-                        "Altura: " + animalStreet +" "+ "Largura: " + animalLargura + "\n" +
-                        nameChef +" "+ cpfCHEF +" "+ telCHEF + "\n" +
-                        animalStreet +" "+ animalNumberStreet;
+                Bundle animalInformations = new Bundle();
+                animalInformations.putString("breedSelected", breedSelected);
+                animalInformations.putString("nameAnimal", nameAnimal);
+                animalInformations.putString("animalBirth", animalBirth);
+                animalInformations.putString("animalWidth", animalLargura);
+                animalInformations.putString("animalWeight", animalWeight);
+                animalInformations.putString("chefName", nameChef);
+                animalInformations.putString("chefCpf", cpfCHEF);
+                animalInformations.putString("chefTel", telCHEF);
+                animalInformations.putString("animalStreet", animalStreet);
+                animalInformations.putString("animalNumberStreet", animalNumberStreet);
 
                 Intent animal = new Intent(AnimalsActivity.this, AnimalActivity.class);
-                animal.putExtra("animalDesc", choiceAnimal);
+                animal.putExtra("animalDesc", animalInformations);
 
                 startActivity(animal);
             }

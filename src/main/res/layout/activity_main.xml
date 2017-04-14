@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,7 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     android:background="#FFFF"
     tools:context="com.example.jv_jo.MainActivity">
 
@@ -17,125 +16,60 @@
         android:layout_height="100dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/bestlogo"/>
+        android:src="@drawable/bestlogo"
+        android:id="@+id/imageView" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:orientation="horizontal">
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nome de Usuário"/>
 
-            <LinearLayout
-                android:layout_width="@dimen/menuItemDp"
-                android:layout_height="wrap_content"
-                android:background="#F4811F"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="@dimen/menuItemDrawableDp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/shopng"
-                    android:id="@+id/imageView"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/itemMenuTxtDp"
-                    android:text="Shopping"
-                    android:paddingBottom="@dimen/itemTxtMenuMarginTopDp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="normal|bold"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="@dimen/menuItemDp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/menuLeftItemMargin"
-                android:background="#3A3A3B"
-                android:onClick="toAnimals"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="@dimen/menuItemDrawableDp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/animalpng"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/itemMenuTxtDp"
-                    android:paddingBottom="@dimen/itemTxtMenuMarginTopDp"
-                    android:text="Animais"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="normal|bold"/>
-
-            </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
+    <EditText
+        android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/menuLeftItemMargin"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Senha"/>
 
-        <LinearLayout
-            android:layout_width="@dimen/menuItemDp"
-            android:layout_height="wrap_content"
-            android:background="#3A3A3B"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:text="Entrar" />
 
-            <ImageView
-                android:layout_width="@dimen/menuItemDrawableDp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:src="@drawable/vacinacaopng"/>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editText3"
+        android:text="Registrar-se"
+        android:textColor="#000"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="@dimen/itemMenuTxtDp"
-                android:paddingBottom="@dimen/itemTxtMenuMarginTopDp"
-                android:text="Vacinas"
-                android:textColor="#FFFFFF"
-                android:textStyle="normal|bold"/>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editText3"
+        android:text="Esqueci a senha"
+        android:textColor="#000"/>
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="@dimen/menuItemDp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/menuLeftItemMargin"
-            android:onClick="toRegister"
-            android:background="#F4811F"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="@dimen/menuItemDrawableDp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:src="@drawable/registerpng"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="@dimen/itemMenuTxtDp"
-                android:paddingBottom="@dimen/itemTxtMenuMarginTopDp"
-                android:text="Registro"
-                android:textColor="#FFFFFF"
-                android:textStyle="normal|bold"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
